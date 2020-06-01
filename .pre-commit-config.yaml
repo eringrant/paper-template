@@ -1,0 +1,37 @@
+default_language_version:
+  python: python3.9
+repos:
+  - repo: https://github.com/amperser/proselint/
+    rev: 0.13.0
+    hooks:
+    - id: proselint
+      exclude: LICENSE|requirements
+      files: \.(tex)$
+
+  - repo: https://github.com/eringrant/paperlint
+    rev: 4a40864959a9e4597a04495da380dc310044702d
+    hooks:
+    - id: paperlint
+
+  - repo: https://github.com/FlamingTempura/bibtex-tidy/
+    rev: v1.8.5
+    hooks:
+    - id: bibtex-tidy
+      args:
+      - '--quiet'
+      - '--strip-enclosing-braces'
+      - '--enclosing-braces=title'
+      - '--curly'
+      - '--numeric'
+      - '--space=2'
+      - '--align=14'
+      - '--duplicates=citation'
+      - '--merge=first'
+      - '--escape'
+      - '--drop-all-caps'
+      - '--no-trailing-commas'
+      - '--encode-urls'
+      - '--no-backup'
+      - '--sort=year,name,title'
+      - '--sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata'
+      - '--omit=abstract,address,on,doi,isbn,issn,month_numeric,urldate,copyright,category,metadata,pdf,added-at,biburl,file,groups,interhash,intrahas,_isbn,keywords,timestamp,username'

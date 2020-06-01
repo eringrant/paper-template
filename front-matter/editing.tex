@@ -1,0 +1,18 @@
+% Abbreviations
+\newcommand{\etal}{\textit{et~al}.~\ }
+\newcommand{\eg}{\textit{e.g.,}~}
+\newcommand{\ie}{\textit{i.e.,}~}
+\newcommand{\cf}{\textit{c.f.,}~}
+\newcommand{\vs}{\textit{vs.}~}
+
+% Coloured notes with counters
+\newcounter{NoteCounter}
+\newcommand{\namednote}[3]{
+  {\small \color{#2} $\blacksquare$
+  \refstepcounter{NoteCounter}
+  \textsf{[#1]$_{\arabic{NoteCounter}}$:{#1}}}
+}
+
+% Draft placeholders.
+\newcommand{\figtodo}[1]{\framebox[0.8\columnwidth]{\rule{0pt}{1in}#1}}
+\newcommand{\todocite}[1]{[\textcolor{blue}{#1}]}

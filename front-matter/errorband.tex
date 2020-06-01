@@ -1,0 +1,46 @@
+% From https://tex.stackexchange.com/a/180324
+% Args:
+%   data table name, error data table name, x column, y column, error column, line and error band color, and error band opacity
+
+\newcommand{\errorband}[6]{
+    \addplot [name path=pluserror,draw=none,no markers,forget plot]
+      table [col sep=comma, x={#2},y expr=\thisrow{#3}+\thisrow{#4}] {#1};
+
+    \addplot [name path=minuserror,draw=none,no markers,forget plot]
+       table [col sep=comma, x={#2},y expr=\thisrow{#3}-\thisrow{#4}] {#1};
+
+    \addplot [forget plot,fill=#5,opacity=#6]
+      fill between[on layer={},of=pluserror and minuserror];
+
+    \addplot+[#5,very thin,no markers]
+      table [col sep=comma, x={#2} ,y={#3}] {#1};
+}
+
+% Example use:
+%
+%\begin{document}
+%\begin{tikzpicture}%
+%  \begin{axis}[%
+%    width=10cm,
+%    height=10cm,
+%    scale only axis,
+%    xlabel={$x$},
+%    ylabel={$y$},
+%    enlarge x limits=false,
+%    grid=major,
+%    legend style={
+%      column sep=3pt,
+%      nodes={right},
+%      legend pos=south east,
+%    },
+%  ]
+%
+%    \errorband{./data.dat}{0}{1}{2}{Firebrick2}{0.4}
+%    \addlegendentry{Data}
+%
+%    \errorband{./data.dat}{0}{3}{4}{SpringGreen4}{0.4}
+%    \addlegendentry{More data}
+%
+%  \end{axis}
+%\end{tikzpicture}%
+%\end{document}
