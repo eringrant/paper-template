@@ -1,3 +1,6 @@
 [submodule "bibs"]
 	path = bibs
 	url = git@github.com:eringrant/bibs.git
+[submodule "arxiv-style"]
+	path = arxiv-style
+	url = git@github.com:kourgeorge/arxiv-style.git
