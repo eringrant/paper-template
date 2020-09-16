@@ -1,3 +1,6 @@
+# Do not include any generated PDFs by default
+*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
