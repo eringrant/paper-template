@@ -1,0 +1,79 @@
+\documentclass{article}
+
+% arXiv style from https://github.com/kourgeorge/arxiv-style.
+\usepackage{arxiv-style/arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+
+
+
+\title{
+  TODO
+}
+
+\author{
+  Erin Grant\thanks{Additional author info.} \\
+  Berkeley Artificial Intelligence Research (BAIR) Lab \\
+	UC Berkeley \\
+	\texttt{eringrant@berkeley.edu} \\
+	%% \AND
+	%% Coauthor \\
+	%% Affiliation \\
+	%% Address \\
+	%% \texttt{email} \\
+	%% \And
+	%% Coauthor \\
+	%% Affiliation \\
+	%% Address \\
+	%% \texttt{email} \\
+	%% \And
+	%% Coauthor \\
+	%% Affiliation \\
+	%% Address \\
+	%% \texttt{email} \\
+}
+
+%\date{September 9, 1985}	% Here you can change the date presented in the paper title
+%\date{} 					% Or removing it
+
+% Uncomment to override the `A preprint' in the header
+\renewcommand{\headeright}{Technical Report}
+\renewcommand{\undertitle}{Technical Report}
+
+% Uncomment to override the default of shorttitle=title.
+%\renewcommand{\shorttitle}{\textit{arXiv} Template}
+
+% Add PDF metadata to help others organize their library
+% Once the PDF is generated, you can check the metadata with
+% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={TODO},
+pdfsubject={q-bio.NC, q-bio.QM},
+pdfauthor={Erin Grant, TODO},
+pdfkeywords={TODO},
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  \input{front-matter/abstract}
+\end{abstract}
+\keywords{First keyword \and Second keyword \and More}
+
+\input{body-matter/all}
+
+\bibliographystyle{unsrt}
+\bibliography{bibs/all}
+
+\input{end-matter/all}
+
+\end{document}
