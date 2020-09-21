@@ -7,8 +7,12 @@ RMDIR = rm -rf
 all: paper
 paper: main.pdf
 
+# All dependencies
+TEX_SRCS := $(shell find . -name '*.tex')
+BIB_SRCS := $(shell find . -name '*.bib')
+
 # Rules
-%.pdf: %.tex
+main.pdf: main.tex $(TEX_SRCS) $(BIB_SRCS)
 	$(LATEXMK) -pdf -quiet $*
 
 mostlyclean:
