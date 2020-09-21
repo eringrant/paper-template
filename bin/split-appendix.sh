@@ -1,5 +1,6 @@
 #!/bin/bash
 # Adapted from https://github.com/egrefen/splitappendix.
+set -e
 
 if [ $# -ne 2 ]
   then
