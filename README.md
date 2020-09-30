@@ -14,6 +14,7 @@ See the Git [documentation on submodules](https://git-scm.com/book/en/v2/Git-Too
 Since forking a template currently does not fork the submodules, after cloning, run:
 
 `git submodule add git@github.com:kourgeorge/arxiv-style.git`
+
 `git submodule add git@github.com:eringrant/bibs.git`
 
 ## Integrating changes from the template
