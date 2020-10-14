@@ -1,9 +1,9 @@
-# paper
+# paper-template
 A starter kit for academic papers.
 
 ## Cloning the repository
 
-`git clone git@github.com:eringrant/paper.git --recurse-submodules`
+`git clone git@github.com:eringrant/paper-template.git --recurse-submodules`
 
 ## Working with submodules
 
@@ -19,9 +19,9 @@ Since forking a template currently does not fork the submodules, after cloning, 
 
 ## Integrating changes from the template
 
-To add the `paper` repo as an upstream, run: 
+To add the `paper-template` repo as an upstream, run: 
 
-`git remote add template git@github.com:eringrant/paper.git`
+`git remote add template git@github.com:eringrant/paper-template.git`
 
 To fetch and merge changes, run:
 
