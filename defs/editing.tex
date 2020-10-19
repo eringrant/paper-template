@@ -1,0 +1,32 @@
+%% Abbreviations
+\newcommand{\etal}{\textit{et~al}.~\ }
+\newcommand{\eg}{\textit{e.g.,}~}
+\newcommand{\ie}{\textit{i.e.,}~}
+\newcommand{\cf}{\textit{c.f.,}~}
+\newcommand{\vs}{\textit{vs.}~}
+
+%% Coloured notes with counters
+\definecolor{darkgreen}{RGB}{0,125,0}
+\definecolor{orange}{RGB}{255,124,84}
+\definecolor{turquoise}{rgb}{0.19, 0.84, 0.78}
+\newcounter{NoteCounter}
+\newcommand{\namednote}[3]{
+  {\small \color{#2} $\blacksquare$
+  \refstepcounter{NoteCounter}
+  \textsf{[#1]$_{\arabic{NoteCounter}}$:{#1}}}
+}
+
+% Draft placeholder.
+\newcommand{\figtodo}[1]{\framebox[0.8\columnwidth]{\rule{0pt}{1in}#1}}
+\newcommand{\todocite}[1]{[\textcolor{blue}{#1}]}
+
+% Mark sections of captions for referring to divisions of figures
+\newcommand{\figleft}{{\em (Left)}}
+\newcommand{\figcenter}{{\em (Center)}}
+\newcommand{\figright}{{\em (Right)}}
+\newcommand{\figtop}{{\em (Top)}}
+\newcommand{\figbottom}{{\em (Bottom)}}
+\newcommand{\captiona}{{\em (a)}}
+\newcommand{\captionb}{{\em (b)}}
+\newcommand{\captionc}{{\em (c)}}
+\newcommand{\captiond}{{\em (d)}}

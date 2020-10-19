@@ -3,21 +3,59 @@
 % arXiv style from https://github.com/kourgeorge/arxiv-style.
 \usepackage{arxiv-style/arxiv}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{natbib}
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
-\usepackage{microtype}      % microtypography
+\usepackage{hyperref}                         % hyperlinks; needs to be loaded first [ctan.org/pkg/hyperref]
+%\hypersetup{citecolor=MidnightBlue}
+%\hypersetup{linkcolor=MidnightBlue}
+%\hypersetup{urlcolor=MidnightBlue}
+\usepackage{ifthen}                           % conditionals in TeX
+\usepackage{url}                              % simple URL typesetting [ctan.org/pkg/url]
 
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{xcolor}
+\usepackage{amsfonts}                         % blackboard math symbols [ctan.org/pkg/amsfonts]
+\usepackage{amsmath}                          % math commands [ctan.org/pkg/amsmath]
+\usepackage{amssymb}                          % math symbols from amsmath
+\usepackage{mathrsfs}                         % script font [ctan.org/pkg/mathrsfs]
+\usepackage{bm}                               % bold math symbols [ctan.org/pkg/bm]
+\usepackage{nicefrac}                         % compact fractions [ctan.org/pkg/nicefrac]
+\usepackage{xfrac}                            % tilted fractions [ctan.org/pkg/xfrac]
+\usepackage{subdepth}                         % corrected sub-/superscript positioning [ctan.org/pkg/subdepth]
 
+\usepackage{array}                            % tabular arrays [ctan.org/pkg/array]
+\usepackage{booktabs}                         % professional-quality tables [ctan.org/pkg/booktabs]
+\usepackage{microtype}                        % microtypography [ctan.org/pkg/microtype]
+\usepackage[nameinlink,capitalise]{cleveref}  % for \cref{f1,f2} [ctan.org/pkg/cleveref]
+\usepackage[font=small,labelfont=bf]{caption} % modifying figures with captions [ctan.org/pkg/caption]
+\usepackage[format=hang]{subcaption}          % creating subfigures with captions [ctan.org/pkg/subcaption]
 
+\usepackage{graphicx}                         % beyond graphics [ctan.org/pkg/graphicx]
+\usepackage[export]{adjustbox}                % beyond graphics boxes [ctan.org/pkg/adjustbox]
+\usepackage{color}                            % color control [ctan.org/pkg/color]
+\usepackage{xcolor}                           % more color control [ctan.org/pkg/xcolor]
+
+\usepackage{pgfplots}                         % creating plots [ctan.org/pkg/pgfplots]
+\usepackage{tikz}                             % creating diagrams [ctan.org/pkg/tikz]
+%\usetikzlibrary{external}                     % externalize graphics for faster compilation
+%tikzexternalize[prefix=tikz]                  % for compatibility with Overleaf
+
+% Algorithms
+% http://mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
+\usepackage[algo2e,algoruled,vlined,noend,ruled]{algorithm2e}  % algorithm environment name is "algorithm2e"
+\setlength{\interspacetitleruled}{8pt}                         % set to 0pt to remove title
+\setlength{\algoheightrule}{0.8pt}                             % thickness of the rules above and below
+\setlength{\algotitleheightrule}{0.8pt}                        % thicknes of the rule below the title
+\AtBeginEnvironment{algorithm2e}{\setstretch{1.05}}            % increase line sep in algo environment
+\SetAlFnt{\footnotesize}
+\SetAlCapFnt{\footnotesize}
+\SetAlCapNameFnt{\footnotesize}
+
+% Acronyms
+\usepackage[
+  acronym,
+  smallcaps,
+  nowarn,
+  section,
+  nonumberlist
+]{glossaries-extra}
+\glsdisablehyper{}
 
 \title{
   TODO
@@ -64,6 +102,9 @@ pdfsubject={q-bio.NC, q-bio.QM},
 pdfauthor={Erin Grant, TODO},
 pdfkeywords={TODO},
 }
+
+% Only the files specified will be included in the document.
+% \includeonly{filename1,filename2,...}
 
 \begin{document}
 \maketitle
