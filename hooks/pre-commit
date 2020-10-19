@@ -1,0 +1,4 @@
+#!/bin/sh
+main=`git config --local tex.main`
+git checkout ${main}.pdf
+make all && git add -f ${main}.pdf

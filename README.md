@@ -1,23 +1,39 @@
 # paper
 A starter kit for academic papers.
 
-## Cloning the repository
+## Setup
+
+### Cloning the repository
 
 `git clone git@github.com:eringrant/paper.git --recurse-submodules`
 
-## Working with submodules
-
-See the Git [documentation on submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
-
 ### Temporary fix to add submodules
 
-Since forking a template currently does not fork the submodules, after cloning, run:
+Since forking a template currently does not fork the submodules, they need to be manually added.
+After cloning the repo for the first time, run:
 
 `git submodule add git@github.com:kourgeorge/arxiv-style.git`
 
 `git submodule add git@github.com:eringrant/bibs.git`
 
-## Integrating changes from the template
+### Installing depedencies
+
+Some of the scripts in [`bin/`](bin/) have dependencies; to install them, run `bin/install_requirements.sh`.
+
+### Installing pre- and post-commit hooks
+
+The template repo contains some useful scripts for maintaining and sharing TeX documents that can be run as Git hooks before and/or after a commit. 
+Default hooks are located at [`hooks/`](hooks/).
+To install the hooks, run `bin/setup_hooks.sh`; this script should be rerun any time modifications are made to the hook files.
+
+
+## Usage
+
+### Working with submodules
+
+See the Git [documentation on submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+
+### Integrating changes from the template
 
 To add the `paper` repo as an upstream, run: 
 
