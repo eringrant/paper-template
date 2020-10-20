@@ -10,6 +10,9 @@
 \usepackage{ifthen}                           % conditionals in TeX
 \usepackage{url}                              % simple URL typesetting [ctan.org/pkg/url]
 
+\usepackage[backend=biber]{biblatex}          % better control than natbib [ctan.org/pkg/biblatex]
+\addbibresource{bibs/all}
+
 \usepackage{amsfonts}                         % blackboard math symbols [ctan.org/pkg/amsfonts]
 \usepackage{amsmath}                          % math commands [ctan.org/pkg/amsmath]
 \usepackage{amssymb}                          % math symbols from amsmath
@@ -21,6 +24,7 @@
 
 \usepackage{array}                            % tabular arrays [ctan.org/pkg/array]
 \usepackage{booktabs}                         % professional-quality tables [ctan.org/pkg/booktabs]
+\usepackage{etoolbox}                         % AtBeginEnvironment command [ctan.org/pkg/etoolbox]
 \usepackage{microtype}                        % microtypography [ctan.org/pkg/microtype]
 \usepackage[nameinlink,capitalise]{cleveref}  % for \cref{f1,f2} [ctan.org/pkg/cleveref]
 \usepackage[font=small,labelfont=bf]{caption} % modifying figures with captions [ctan.org/pkg/caption]
@@ -116,8 +120,8 @@ pdfkeywords={TODO},
 
 \input{body-matter/all}
 
-\bibliographystyle{unsrt}
-\bibliography{bibs/all}
+\nocite{*}
+\printbibliography
 
 \input{end-matter/all}
 
