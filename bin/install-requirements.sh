@@ -15,3 +15,4 @@ case $OS in
 esac
 
 install qpdf
+echo "Follow the instructions at https://github.com/odeke-em/drive#installing and https://github.com/odeke-em/drive#initializing to set up the Google Drive interface."
