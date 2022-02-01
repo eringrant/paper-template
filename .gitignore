@@ -1,3 +1,6 @@
+# MacOS.
+.DS_Store
+
 # Do not include any generated PDFs by default
 *.pdf
 
