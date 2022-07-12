@@ -1,0 +1,9 @@
+default_language_version:
+  python: python3.9
+repos:
+  - repo: https://github.com/amperser/proselint/
+    rev: 0.13.0
+    hooks:
+    - id: proselint
+      exclude: LICENSE|requirements
+      files: \.(tex)$
