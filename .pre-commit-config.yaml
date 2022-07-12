@@ -7,3 +7,23 @@ repos:
     - id: proselint
       exclude: LICENSE|requirements
       files: \.(tex)$
+  - repo: https://github.com/FlamingTempura/bibtex-tidy/
+    rev: v1.8.5
+    hooks:
+    - id: bibtex-tidy
+      args:
+      - '--curly'
+      - '--numeric'
+      - '--space=2'
+      - '--align=14'
+      - '--duplicates=key,doi'
+      - '--escape'
+      - '--sort=year,name'
+      - '--strip-enclosing-braces'
+      - '--drop-all-caps'
+      - '--sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata'
+      - '--no-trailing-commas'
+      - '--encode-urls'
+      - '--no-remove-dupe-fields'
+      - '--generate-keys'
+      - '--no-backup'
