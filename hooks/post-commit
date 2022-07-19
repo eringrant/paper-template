@@ -1,5 +1,0 @@
-#!/bin/sh
-# Post-commit hook that currently does nothing.
-main=`git config --local tex.main`
-hash=`git config --local tex.hash`
-gdrivedir=`git config --local tex.gdrivedir`

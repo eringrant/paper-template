@@ -1,33 +1,74 @@
 # paper-template
-A starter kit for academic papers.
+
+A starter kit for academic papers formatted in arXiv style.
 
 ## Setup
 
-`git clone git@github.com:eringrant/paper-template.git --recurse-submodules`
+### Option 1 (Recommended): via GitHub
 
-### Temporary fix to add submodules
+Use GitHub to [create a repository from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
 Since forking a template currently does not fork the submodules, they need to be manually added.
-After cloning the repo for the first time, run:
+Clone the templated repository for the first time and add submodules via:
 
-`git submodule add git@github.com:kourgeorge/arxiv-style.git`
+```shell
+git clone git@github.com:USERNAME/TEMPLATED-REPO.git
+git submodule add git@github.com:kourgeorge/arxiv-style.git
+```
 
-`git submodule add git@github.com:eringrant/bibs.git`
+### Option 2: via command line
 
-### Installing depedencies
+Clone this repo via:
 
-Some of the scripts in [`bin/`](bin/) have dependencies; to install them, run `bin/install_requirements.sh`.
+```shell
+git clone git@github.com:eringrant/paper-template.git --recurse-submodules
+```
 
-Several of the hooks in [`hooks/`](hooks/) require [drive](https://github.com/odeke-em/drive#installing).
+Create an appropriate GitHub repo for the template, then overwrite origin via:
 
-### Installing pre- and post-commit hooks
+```shell
+git remote rm origin
+git remote add origin git@github.com:USERNAME/TEMPLATED-REPO.git
+git config master.remote origin
+git config master.merge refs/heads/master
+```
 
-The template repo contains some useful scripts for maintaining and sharing TeX documents that can be run as Git hooks before and/or after a commit. 
-Default hooks are located at [`hooks/`](hooks/).
-To install the hooks, run `bin/setup_hooks.sh`; this script should be rerun any time modifications are made to the hook files.
+## Optional: Pre-commit
 
+[`.pre-commit-config.yaml`](/.pre-commit-config.yaml) has been configured to run several autoformatters.
+Run the following to install, update, and cache all pre-commit tools:
+
+```shell
+pre-commit install && pre-commit run
+```
 
 ## Usage
+
+### Working with Overleaf
+
+Clone the templated repo as [above](#setup).
+Then `git push` and `git pull` should work as usual; the GitHub remote is `origin`.
+
+To additionally work with an Overleaf repository, determine the [Overleaf URL for "raw Git access"](https://www.overleaf.com/learn/how-to/How_do_I_connect_an_Overleaf_project_with_a_repo_on_GitHub%2C_GitLab_or_BitBucket%3F#Add_an_Overleaf_Project_as_a_Git_Remote).
+(Do not use Overleaf's process to "Sync" with GitHub.)
+
+From the command line, do:
+
+```shell
+git remote add overleaf OVERLEAF_URL
+```
+
+Then push and pull from the Overleaf repository to the `master` branch is done via 
+```shell
+git push overleaf master
+``` 
+and 
+```shell
+git pull overleaf master
+```
+
+You will need to enter your Overleaf username and password once per session.
+NB: The primary branch must be named `master` rather than `main` to work with Overleaf.
 
 ### Working with submodules
 
@@ -37,8 +78,12 @@ See the Git [documentation on submodules](https://git-scm.com/book/en/v2/Git-Too
 
 To add the `paper-template` repo as an upstream, run: 
 
-`git remote add template git@github.com:eringrant/paper-template.git`
+```shell
+git remote add template git@github.com:eringrant/paper-template.git
+```
 
 To fetch and merge changes, run:
 
-`git fetch --all && git merge template/master --allow-unrelated-histories`
+```shell
+git fetch --all && git merge template/master --allow-unrelated-histories
+```

@@ -7,6 +7,12 @@ repos:
     - id: proselint
       exclude: LICENSE|requirements
       files: \.(tex)$
+
+  - repo: https://github.com/eringrant/paperlint
+    rev: 4a40864959a9e4597a04495da380dc310044702d
+    hooks:
+    - id: paperlint
+
   - repo: https://github.com/FlamingTempura/bibtex-tidy/
     rev: v1.8.5
     hooks:
