@@ -12,7 +12,7 @@ TEX_SRCS := $(shell find . -name '*.tex')
 BIB_SRCS := $(shell find . -name '*.bib')
 
 # Rules
-main.pdf: main.tex $(TEX_SRCS) $(BIB_SRCS)
+%.pdf: %.tex $(TEX_SRCS) $(BIB_SRCS)
 	$(LATEXMK) -pdf -quiet $*
 
 mostlyclean:
